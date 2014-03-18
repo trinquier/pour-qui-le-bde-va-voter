@@ -1,0 +1,41 @@
+<header>
+  <h1>Pour qui faut-il voter ?</h1>
+
+  <p class="best-list">
+    <% if Item.total_points(0) == Item.total_points(1) %>
+    <%= image_tag "bedzoum.png", alt: "BEDzoum" %>
+    Il faut voter <strong>BEDzoum</strong>
+    <small>Parce qu'en cas d'égalité, ce sont toujours eux qui gagnent.</small>
+    <% else %>
+    <%= image_tag "list#{@best_list}.jpg", alt: Item::LIST_NAMES[@best_list] %>
+    Il faut voter <strong><%= Item::LIST_NAMES[@best_list] %></strong>
+    <% end %>
+  </p>
+</header>
+
+
+<ul class="scores">
+  <li>
+    <%= link_to image_tag("list0.jpg", alt: "The Bedfathers"), "http://thebedfathers.com/" %>
+    The Bedfathers
+    <strong><%= Item.total_points 0 %> <small>pts</small></strong>
+  </li>
+  <li>
+    <%= link_to image_tag("list1.jpg", alt: "Bedzacoatl"), "http://bedzalcoatl.fr/" %>
+    Bedzalcoatl
+    <strong><%= Item.total_points 1 %> <small>pts</small></strong>
+  </li>
+</ul>
+
+
+<ul class="items">
+<% @items.each do |i| %>
+  <li class="list<%= i.list %>">
+    <strong class="<%= if i.points > 0 then 'pos' else 'neg' end %>">
+      <%= image_tag "list#{i.list}.jpg", alt: Item::LIST_NAMES[@best_list] %>
+      <%= i.points %> <small>pts</small>
+    </strong>
+    <%=auto_link i.title %>
+  </li>
+<% end %>
+</ul>

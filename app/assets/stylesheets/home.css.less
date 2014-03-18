@@ -1,0 +1,153 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Less here: http://lesscss.org/
+
+
+@cloud: #ecf0f1;
+@blue: #2c3e50;
+
+
+body {
+  background-color: @blue;
+  color: @cloud;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+
+header {
+  color: @blue;
+  background-color: @cloud;
+  padding-bottom: 7em;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 5em;
+  line-height: 2em;
+  text-align: center;
+  margin: 0;
+}
+
+
+.best-list {
+  font-size: 2em;
+  line-height: 1.2em;
+  text-align: center;
+
+  img {
+    max-height: 40%;
+    max-width: 25%;
+    display: block;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+
+  strong {
+    display: block;
+    font-size: 2.5em;
+    line-height: 1.4em;
+    font-weight: 300;
+  }
+}
+
+
+.scores {
+  list-style: none;
+  font-size: 3em;
+  margin: 0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  img {
+    width: 20%;
+    display: block;
+    margin: auto;
+  }
+
+  li {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    line-height: 2em;
+
+    strong {
+      display: block;
+      font-size: 2em;
+
+      small { 
+        font-size: 0.3em; 
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+
+.items {
+  list-style: none;
+  font-size: 1.6em;
+  margin: 0;
+
+  li {
+    width: 41%;
+    line-height: 1.3em;
+    clear: both;
+    margin-bottom: 1em;
+    word-wrap: break-word;
+
+    strong {
+      text-align: center;
+      font-size: 1.5em;
+
+      img { display: none; }
+
+      small {
+        font-weight: 100;
+        font-size: 0.5em;
+      }
+
+      &.pos { color: #2ecc71; }
+      &.neg { color: #e74c3c; }
+    }
+
+    &.list0 {
+      margin-left: 5%;
+
+      strong {
+        float: right;
+        text-align: right;
+        margin-left: 10%;
+      }
+    }
+
+    &.list1 {
+      margin-left: 50%;
+      text-align: right;
+
+      strong {
+        float: left;
+        text-align: left;
+        margin-right: 10%;
+      }
+    }
+  }
+}
+
+
+footer {
+  font-size: 0.8em;
+  margin-top: 3%;
+  margin-left: 1%;
+  color: lighten(@blue, 30%);
+  clear: both;
+
+  a {
+    color: lighten(@blue, 30%);
+  }
+}

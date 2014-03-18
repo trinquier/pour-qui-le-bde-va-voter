@@ -1,0 +1,72 @@
+@media screen and (max-width: 800px) {
+
+  header {
+    h1 {
+      font-size: 2.7em;
+      line-height: 1.2em;
+      padding-top: 0.2em;
+    }
+
+    img {
+      max-width: 50%;
+    }
+
+    .best-list  {
+      font-size: 1.5em;
+
+      strong {
+        font-size: 1.8em;
+      }
+    }
+  }
+
+
+  .scores {
+    padding: 0;
+
+    li {
+      width: 100%;
+      text-align: center; 
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+
+  .items {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    li {
+      width: 100%;
+
+
+      &.list0, &.list1 {
+        text-align: left;
+        margin: 0;
+        margin-bottom: 1em;
+
+        strong {
+          float: left;
+          margin: 0;
+          margin-right: 0.5em;
+          width: 1.5em;
+          text-align: center;
+          margin-bottom: 1em;
+
+          small { 
+            display: none; 
+          }
+
+          img {
+            width: 70%;
+            margin-bottom: 0.3em;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

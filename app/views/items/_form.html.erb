@@ -1,0 +1,31 @@
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+ 
+    <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <%= f.text_area :title, :class => 'text_field', required: true %>
+  </div>
+  <div class="control-group">
+    <%= f.label :list, :class => 'control-label' %>
+    <%= f.select :list, list_select_options, class: 'text_field' %>
+  </div>
+  <div class="control-group">
+    <%= f.label :points, :class => 'control-label' %>
+    <%= f.text_field :points, :class => 'text_field', required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Go!", :class => 'btn btn-primary' %>
+    <%= link_to "Annuler", items_path %>
+  </div>
+<% end %>
